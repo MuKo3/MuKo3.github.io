@@ -82,8 +82,9 @@
 <body>
 <main>
     <h1>Коэффициенты для ставок</h1>
-    <h3 id = '123'></h3>
-    <h3 id = '1233'></h3><h3 id = '1234'></h3>
+    <h3 id='123'></h3>
+    <h3 id='1233'></h3>
+    <h3 id='1234'></h3>
     <table>
         <thead>
         <tr>
@@ -125,11 +126,14 @@
     alert('asd')
     let tg = window.Telegram.WebApp
     alert(tg.initData)
-    alert(tg.initData.query_id)
-    print(tg.initData.query_id)
-    print(tg.initData.user)
-    document.getElementById('123').innerText = tg.initData.user
-    document.getElementById('1233').innerText = tg.initData
-    document.getElementById('1234').innerText = tg.initData.query_id
+    const searchString = new URLSearchParams(window.location.search);
+
+    const clickid = searchString.get('clickid');
+    const param1 = searchString.get('param1');
+    const param2 = searchString.get('param2');
+
+    const result = `${clickid}:${param1}:${param2}`; // clickid:22:23
+
+    alert(result)
 </script>
 </html>
