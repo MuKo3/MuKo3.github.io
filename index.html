@@ -1,92 +1,200 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <script src="https://telegram.org/js/telegram-web-app.js"></script>-->
+<!--    <title>Матч-центр</title>-->
+<!--    <link rel="stylesheet" href="css/styles.css">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 20px;-->
+<!--            background-color: #f0f0f0;-->
+<!--        }-->
+
+<!--        .block {-->
+<!--            background-color: #fff;-->
+<!--            border: 1px solid #ccc;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            width: 100%; /* Сделайте блоки полноэкранными */-->
+<!--        }-->
+
+<!--        @media screen and (min-width: 768px) {-->
+<!--            .block {-->
+<!--                width: 300px; /* Задайте желаемую ширину для больших экранов */-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Матч-центр</h1>-->
+<!--&lt;!&ndash;<div id="match-container">&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash; Существующие блоки матчей здесь &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="match-block">&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<ul id="wordList"></ul>-->
+<!--</body>-->
+<!--<script>-->
+
+
+<!--    let params = new URLSearchParams(document.location.search);-->
+<!--    let value = params.get('games'); // 'key' – это имя целевого параметра-->
+
+<!--    arr = value.split('*')-->
+
+<!--    const words = ['яблоко', 'груша', 'банан', 'виноград', 'слива'];-->
+<!--    const wordList = document.getElementById('wordList');-->
+
+<!--    words.forEach(word => {-->
+<!--            const listItem = document.createElement('li');-->
+<!--            listItem.textContent = word;-->
+<!--            wordList.appendChild(listItem);-->
+
+<!--            const block = document.createElement('div');-->
+<!--            block.classList.add('block');-->
+<!--            block.textContent = word;-->
+<!--            document.body.appendChild(block);-->
+<!--        });-->
+
+
+<!--    // window.addEventListener('scroll', function () {-->
+<!--    //     console.log('1')-->
+<!--    //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {-->
+<!--    //         console.log('2')-->
+<!--    //         const matchContainer = document.getElementById('match-container');-->
+<!--    //         const newMatchBlocks = [];-->
+<!--    //-->
+<!--    //         for (let i = 0; i < 3; i++) {-->
+<!--    //             console.log('3')-->
+<!--    //             text = arr[i].split('/')-->
+<!--    //             console.log(text)-->
+<!--    //             const newMatchBlock = document.createElement('div');-->
+<!--    //             newMatchBlock.classList.add('match-block');-->
+<!--    //-->
+<!--                  const h2 = document.createElement('h2');-->
+<!--    //             h2.textContent = `Матч`;-->
+<!--    //             newMatchBlock.appendChild(h2);-->
+<!--    //-->
+<!--    //             const time = document.createElement('p');-->
+<!--    //             time.textContent = text[0];-->
+<!--    //             newMatchBlock.appendChild(time);-->
+<!--    //-->
+<!--    //             const team1 = document.createElement('p');-->
+<!--    //             team1.textContent = text[1];-->
+<!--    //             newMatchBlock.appendChild(team1);-->
+<!--    //-->
+<!--    //             const team2 = document.createElement('p');-->
+<!--    //             team2.textContent = text[2];-->
+<!--    //             newMatchBlock.appendChild(team2);-->
+<!--    //-->
+<!--    //             const coefficientsDiv = document.createElement('div');-->
+<!--    //             coefficientsDiv.classList.add('coefficients');-->
+<!--    //-->
+<!--    //             const coefficient1 = document.createElement('div');-->
+<!--    //             coefficient1.classList.add('coefficient');-->
+<!--    //             coefficient1.innerHTML = `-->
+<!--    //             <p>Букмекеры</p>-->
+<!--    //             <p>Победа :</p>-->
+<!--    //             <p>Ничья: </p>-->
+<!--    //             <p>Победа :</p>-->
+<!--    //         `;-->
+<!--    //             coefficientsDiv.appendChild(coefficient1);-->
+<!--    //-->
+<!--    //             const coefficient2 = document.createElement('div');-->
+<!--    //             coefficient2.classList.add('coefficient');-->
+<!--    //             coefficient2.innerHTML = `-->
+<!--    //             <p>Букмекер 2</p>-->
+<!--    //             <p>Победа : </p>-->
+<!--    //             <p>Ничья:</p>-->
+<!--    //             <p>Победа : </p>-->
+<!--    //         `;-->
+<!--    //             coefficientsDiv.appendChild(coefficient2);-->
+<!--    //-->
+<!--    //             newMatchBlock.appendChild(coefficientsDiv);-->
+<!--    //-->
+<!--    //             const moreInfoLink = document.createElement('a');-->
+<!--    //             moreInfoLink.href = ``;-->
+<!--    //             moreInfoLink.textContent = 'Вывести данные';-->
+<!--    //             newMatchBlock.appendChild(moreInfoLink);-->
+<!--    //-->
+<!--    //             newMatchBlocks.push(newMatchBlock);-->
+<!--    //         }-->
+
+<!--    //     newMatchBlocks.forEach(block => matchContainer.appendChild(block));-->
+<!--    // }-->
+<!--    // })-->
+<!--</script>-->
+
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <title>Матч-центр</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<h1>Матч-центр</h1>
-<div id="match-container">
-    <!-- Существующие блоки матчей здесь -->
-    <div class="match-block">
-    </div>
-</div>
-</body>
-<script>
-    let tg = window.Telegram.WebApp
-
-
-    let params = new URLSearchParams(document.location.search);
-    let value = params.get('games'); // 'key' – это имя целевого параметра
-
-    arr = value.split('*')
-
-    window.addEventListener('scroll', function () {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            const matchContainer = document.getElementById('match-container');
-            const newMatchBlocks = [];
-
-            for (let i = 0; i < 3; i++) {
-                text = arr[i].split('/')
-                console.log(text)
-                const newMatchBlock = document.createElement('div');
-                newMatchBlock.classList.add('match-block');
-
-                const h2 = document.createElement('h2');
-                h2.textContent = `Матч`;
-                newMatchBlock.appendChild(h2);
-
-                const time = document.createElement('p');
-                time.textContent = text[0];
-                newMatchBlock.appendChild(time);
-
-                const team1 = document.createElement('p');
-                team1.textContent = text[1];
-                newMatchBlock.appendChild(team1);
-
-                const team2 = document.createElement('p');
-                team2.textContent = text[2];
-                newMatchBlock.appendChild(team2);
-
-                const coefficientsDiv = document.createElement('div');
-                coefficientsDiv.classList.add('coefficients');
-
-                const coefficient1 = document.createElement('div');
-                coefficient1.classList.add('coefficient');
-                coefficient1.innerHTML = `
-                <p>Букмекеры</p>
-                <p>Победа :</p>
-                <p>Ничья: </p>
-                <p>Победа :</p>
-            `;
-                coefficientsDiv.appendChild(coefficient1);
-
-                const coefficient2 = document.createElement('div');
-                coefficient2.classList.add('coefficient');
-                coefficient2.innerHTML = `
-                <p>Букмекер 2</p>
-                <p>Победа : </p>
-                <p>Ничья:</p>
-                <p>Победа : </p>
-            `;
-                coefficientsDiv.appendChild(coefficient2);
-
-                newMatchBlock.appendChild(coefficientsDiv);
-
-                const moreInfoLink = document.createElement('a');
-                moreInfoLink.href = ``;
-                moreInfoLink.textContent = 'Вывести данные';
-                newMatchBlock.appendChild(moreInfoLink);
-
-                newMatchBlocks.push(newMatchBlock);
-            }
-
-            newMatchBlocks.forEach(block => matchContainer.appendChild(block));
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Dynamic Blocks App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
         }
-    })
+
+        .block {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%; /* Сделайте блоки полноэкранными */
+        }
+
+        @media screen and (min-width: 768px) {
+            .block {
+                width: 300px; /* Задайте желаемую ширину для больших экранов */
+            }
+        }
+    </style>
+</head>
+
+<body>
+<ul id="wordList"></ul>
+
+<script>
+    const words = ['яблоко', 'груша', 'банан', 'виноград', 'слива'];
+    const wordList = document.getElementById('wordList');
+
+    words.forEach(word => {
+        const listItem = document.createElement('li');
+
+
+        const block = document.createElement('div');
+        block.classList.add('block');
+
+        // Добавляем четыре дополнительных текста в каждый блок
+        const text1 = document.createTextNode(word);
+        const text2 = document.createTextNode(`Цена: ${word}`);
+        const text3 = document.createTextNode(`В наличии: ${word}`);
+        const text4 = document.createTextNode(`Описание: ${word}`);
+
+        block.appendChild(text1);
+        block.appendChild(document.createElement('br')); // Добавляем перевод строки
+        block.appendChild(text2);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text3);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text4);
+
+        document.body.appendChild(block);
+    });
 </script>
+</body>
 
 </html>
