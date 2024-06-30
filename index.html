@@ -173,11 +173,11 @@
 
     words = value.split('*')
     const wordList = document.getElementById('wordList');
-
+    console.log(words)
     words.forEach(word => {
 
         text = word.split('/')
-
+        console.log(text)
         const block = document.createElement('div');
         block.classList.add('block');
 
