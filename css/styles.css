@@ -4,7 +4,14 @@
             margin: 0;
             padding: 0;
         }
-
+        div {
+            background: var(--tg-theme-bg-color);
+            border: 3px solid #ccc;
+            border-radius: 15px 15px 15px 15px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+        }
         #wordList {
             list-style: none;
             padding: 0;
@@ -28,14 +35,7 @@
             margin-bottom: 0;
         }
         }
-        div {
-            background: var(--tg-theme-bg-color);
-            border: 3px solid #ccc;
-            border-radius: 15px 15px 15px 15px;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 400px;
-        }
+
         h1 {
             text-align: center;
         }
