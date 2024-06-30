@@ -82,6 +82,8 @@
 <body>
 <main>
     <h1>Коэффициенты для ставок</h1>
+    <h3 id = '123'></h3>
+    <h3 id = '1233'></h3><h3 id = '1234'></h3>
     <table>
         <thead>
         <tr>
@@ -126,5 +128,8 @@
     alert(tg.initData.query_id)
     print(tg.initData.query_id)
     print(tg.initData.user)
+    document.getElementById('123').innerText = tg.initData.user
+    document.getElementById('1233').innerText = tg.initData
+    document.getElementById('1234').innerText = tg.initData.query_id
 </script>
 </html>
