@@ -21,11 +21,9 @@
 
     let params = new URLSearchParams(document.location.search);
     let value = params.get('games'); // 'key' – это имя целевого параметра
-    console.log(value.split('*'))
+
     arr = value.split('*')
-    console.log(arr)
-    console.log(arr.length)
-    console.log(arr[0].split('/'))
+
     window.addEventListener('scroll', function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             const matchContainer = document.getElementById('match-container');
@@ -33,7 +31,7 @@
 
             for (let i = 0; i < arr.length; i++) {
                 text = arr[i].split('/')
-
+                console.log(text)
                 const newMatchBlock = document.createElement('div');
                 newMatchBlock.classList.add('match-block');
 
