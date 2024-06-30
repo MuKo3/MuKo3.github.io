@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
         }
+
         .match-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -18,15 +19,19 @@
             padding: 20px;
             max-width: 400px;
         }
+
         h1 {
             text-align: center;
         }
+
         h2 {
             text-align: center;
         }
+
         p {
             margin: 0 0 10px;
         }
+
         a {
             display: block;
             text-align: center;
@@ -36,23 +41,28 @@
             padding: 10px;
             border-radius: 5px;
         }
+
         .coefficients {
             display: flex;
             justify-content: space-around;
             margin: 10px 0;
         }
+
         .coefficient {
             text-align: center;
         }
+
         .coefficient-value {
             font-weight: bold;
         }
+
         label {
             display: block;
             text-align: center;
             margin: 10px 0;
             cursor: pointer;
         }
+
         input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -64,9 +74,11 @@
             position: relative;
             transition: background-color 0.3s;
         }
+
         input[type="checkbox"]:checked {
             background-color: #4CAF50;
         }
+
         input[type="checkbox"]:checked::before {
             content: '';
             position: absolute;
@@ -77,29 +89,32 @@
             left: 0;
             transition: left 0.3s;
         }
+
         input[type="checkbox"]:checked::before {
             left: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Матч-центр</h1>
-    <div id="match-container">
-        <!-- Существующие блоки матчей здесь -->
-        <div class="match-block">
+<h1>Матч-центр</h1>
+<div id="match-container">
+    <!-- Существующие блоки матчей здесь -->
+    <div class="match-block">
         <h2>Матч 1</h2>
         <p>Время: 19:00</p>
         <p>Команда 1: FC Barcelona</p>
         <p>Команда 2: Real Madrid</p>
         <div class="coefficients">
             <div class="coefficient">
-                <p>Букмекерка 1<p>
+                <p>Букмекерка 1
+                <p>
                 <p>Победа Barca: <span class="coefficient-value">1.85</span></p>
                 <p>Ничья: <span class="coefficient-value">3.20</span></p>
                 <p>Победа Real: <span class="coefficient-value">4.00</span></p>
             </div>
             <div class="coefficient">
-                <p>Букмекерка 2<p>
+                <p>Букмекерка 2
+                <p>
                 <p>Победа Barca: <span class="coefficient-value">1.90</span></p>
                 <p>Ничья: <span class="coefficient-value">3.30</span></p>
                 <p>Победа Real: <span class="coefficient-value">4.20</span></p>
@@ -111,20 +126,22 @@
             Следить за матчем
         </label>
     </div>
-        <div class="match-block">
+    <div class="match-block">
         <h2>Матч 2</h2>
         <p>Время: 20:30</p>
         <p>Команда 1: Manchester United</p>
         <p>Команда 2: Liverpool FC</p>
         <div class="coefficients">
             <div class="coefficient">
-                <p>Букмекерка 1<p>
+                <p>Букмекерка 1
+                <p>
                 <p>Победа Man Utd: <span class="coefficient-value">2.10</span></p>
                 <p>Ничья: <span class="coefficient-value">3.50</span></p>
                 <p>Победа Liverpool: <span class="coefficient-value">3.00</span></p>
             </div>
             <div class="coefficient">
-                <p>Букмекерка 2<p>
+                <p>Букмекерка 2
+                <p>
                 <p>Победа Man Utd: <span class="coefficient-value">2.20</span></p>
                 <p>Ничья: <span class="coefficient-value">3.40</span></p>
                 <p>Победа Liverpool: <span class="coefficient-value">2.90</span></p>
@@ -136,20 +153,22 @@
             Следить за матчем
         </label>
     </div>
-     <div class="match-block">
+    <div class="match-block">
         <h2>Матч 3</h2>
         <p>Время: 22:00</p>
         <p>Команда 1: Juventus</p>
         <p>Команда 2: Inter Milan</p>
         <div class="coefficients">
             <div class="coefficient">
-                <p>Букмекерка 1<p>
+                <p>Букмекерка 1
+                <p>
                 <p>Победа Juve: <span class="coefficient-value">2.50</span></p>
                 <p>Ничья: <span class="coefficient-value">3.00</span></p>
                 <p>Победа Inter: <span class="coefficient-value">2.80</span></p>
             </div>
             <div class="coefficient">
-                <p>Букмекерка 2<p>
+                <p>Букмекерка 2
+                <p>
                 <p>Победа Juve: <span class="coefficient-value">2.60</span></p>
                 <p>Ничья: <span class="coefficient-value">2.90</span></p>
                 <p>Победа Inter: <span class="coefficient-value">2.70</span></p>
@@ -162,11 +181,25 @@
         </label>
     </div>
     <script>
+
+        alert('asd')
+        let tg = window.Telegram.WebApp
+        alert(tg.initData)
+        const searchString = new URLSearchParams(window.location.search);
+
+        const clickid = searchString.get('clickid');
+        const param1 = searchString.get('param1');
+        const param2 = searchString.get('param2');
+
+        const result = `${clickid}:${param1}:${param2}`; // clickid:22:23
+
+        alert(result)
+
         const products = ['apple', 'orange', 'banana']
         const matchContainer = document.getElementById('match-container');
         const newMatchBlocks = [];
 
-        for (let i = 0; i < ; i++) {
+        for (let i = 0; i <; i++) {
             const newMatchBlock = document.createElement('div');
             newMatchBlock.classList.add('match-block');
 
@@ -228,8 +261,6 @@
 
             newMatchBlock.appendChild(followLabel);
 
-
-          
 
             newMatchBlocks.push(newMatchBlock);
         }
