@@ -12,101 +12,7 @@
 <div id="match-container">
     <!-- Существующие блоки матчей здесь -->
     <div class="match-block">
-        <h2>Матч 1</h2>
-        <div class="probs">
-            <div class="prob">
-                <p>Время: 19:00</p>
-                <p>Команда 1: FC Barcelona</p>
-                <p>Команда 2: Real MadridC</p>
-            </div>
-            <div class="prob">
-                <p>Вероятный победитель</p>
-                <p>Команда :</p>
-                <p></p>
-            </div>
         </div>
-        <div class="coefficients">
-            <div class="coefficient">
-                <p>Букмекерка 1</p>
-                <p>
-                <p>Победа Barca: <span class="coefficient-value">1.85</span></p>
-                <p>Ничья: <span class="coefficient-value">3.20</span></p>
-                <p>Победа Real: <span class="coefficient-value">4.00</span></p>
-            </div>
-            <div class="coefficient">
-                <p>Букмекерка 2
-                <p>
-                <p>Победа Barca: <span class="coefficient-value">1.90</span></p>
-                <p>Ничья: <span class="coefficient-value">3.30</span></p>
-                <p>Победа Real: <span class="coefficient-value">4.20</span></p>
-            </div>
-        </div>
-        <a href="">Вывести данные</a>
-    </div>
-    <div class="match-block">
-        <h2>Матч 2</h2>
-        <div class="probs">
-            <div class="prob">
-                <p>Время: 20:30</p>
-                <p>Команда 1: Manchester United</p>
-                <p>Команда 2: Liverpool FC</p>
-            </div>
-            <div class="prob">
-                <p>Вероятный победитель</p>
-                <p>Команда :</p>
-                <p></p>
-            </div>
-        </div>
-        <div class="coefficients">
-            <div class="coefficient">
-                <p>Букмекерка 1</p>
-                <p>
-                <p>Победа Man Utd: <span class="coefficient-value">2.10</span></p>
-                <p>Ничья: <span class="coefficient-value">3.50</span></p>
-                <p>Победа Liverpool: <span class="coefficient-value">3.00</span></p>
-            </div>
-            <div class="coefficient">
-                <p>Букмекерка 2
-                <p>
-                <p>Победа Man Utd: <span class="coefficient-value">2.20</span></p>
-                <p>Ничья: <span class="coefficient-value">3.40</span></p>
-                <p>Победа Liverpool: <span class="coefficient-value">2.90</span></p>
-            </div>
-        </div>
-        <a href="">Вывести данные</a>
-    </div>
-    <div class="match-block">
-        <h2>Матч 3</h2>
-        <div class="probs">
-            <div class="prob">
-                <p>Время: 22:00</p>
-                <p>Команда 1: Juventus</p>
-                <p>Команда 2: Inter Milan</p>
-            </div>
-            <div class="prob">
-                <p>Вероятный победитель</p>
-                <p>Команда :</p>
-                <p></p>
-            </div>
-        </div>
-        <div class="coefficients">
-            <div class="coefficient">
-                <p>Букмекерка 1</p>
-                <p>
-                <p>Победа Juve: <span class="coefficient-value">2.50</span></p>
-                <p>Ничья: <span class="coefficient-value">3.00</span></p>
-                <p>Победа Inter: <span class="coefficient-value">2.80</span></p>
-            </div>
-            <div class="coefficient">
-                <p>Букмекерка 2
-                <p>
-                <p>Победа Juve: <span class="coefficient-value">2.60</span></p>
-                <p>Ничья: <span class="coefficient-value">2.90</span></p>
-                <p>Победа Inter: <span class="coefficient-value">2.70</span></p>
-            </div>
-        </div>
-        <a href="">Вывести данные</a>
-    </div>
 </div>
 </body>
 <script>
@@ -115,30 +21,32 @@
 
     let params = new URLSearchParams(document.location.search);
     let value = params.get('games'); // 'key' – это имя целевого параметра
-    console.log(value)
+    console.log(value.split('*'))
+    arr = value.split('*')
     window.addEventListener('scroll', function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             const matchContainer = document.getElementById('match-container');
             const newMatchBlocks = [];
 
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < arr.length; i++) {
+                text = arr[i].split('/')
                 const newMatchBlock = document.createElement('div');
                 newMatchBlock.classList.add('match-block');
 
                 const h2 = document.createElement('h2');
-                h2.textContent = `Матч `;
+                h2.textContent = `Матч`;
                 newMatchBlock.appendChild(h2);
 
                 const time = document.createElement('p');
-                time.textContent = 'Время: ';
+                time.textContent = text[0];
                 newMatchBlock.appendChild(time);
 
                 const team1 = document.createElement('p');
-                team1.textContent = 'Команда 1: ';
+                team1.textContent = text[1];
                 newMatchBlock.appendChild(team1);
 
                 const team2 = document.createElement('p');
-                team2.textContent = 'Команда 2: ';
+                team2.textContent = text[2];
                 newMatchBlock.appendChild(team2);
 
                 const coefficientsDiv = document.createElement('div');
@@ -147,8 +55,8 @@
                 const coefficient1 = document.createElement('div');
                 coefficient1.classList.add('coefficient');
                 coefficient1.innerHTML = `
-                <p>Букмекер 1</p>
-                <p>Победа : </p>
+                <p>Букмекеры</p>
+                <p>Победа :</p>
                 <p>Ничья: </p>
                 <p>Победа :</p>
             `;
