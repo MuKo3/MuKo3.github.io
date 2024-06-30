@@ -146,7 +146,7 @@
 <ul id="wordList"></ul>
 
 <script>
-let params = new URLSearchParams(document.location.search);
+    let params = new URLSearchParams(document.location.search);
 let value = params.get('games'); // 'games' – это имя целевого параметра
 
 let words = value ? value.split('*') : ['неизвестно'];
@@ -159,13 +159,13 @@ words.forEach(word => {
     block.classList.add('block');
 
     // Добавляем семь текстовых узлов в каждый блок
-    const text1 = document.createTextNode(replaceNone(text[0]) || 'неизвестно');
-    const text2 = document.createTextNode(`Команда 1: ${replaceNone(text[1]) || 'неизвестно'}`);
-    const text3 = document.createTextNode(`Команда 2: ${replaceNone(text[2]) || 'неизвестно'}`);
-    const text4 = document.createTextNode(`Текущий счет: ${replaceNone(text[3]) || 'неизвестно'}`);
-    const text5 = document.createTextNode(`Победа 1 команды: ${replaceNone(text[4]) || 'неизвестно'}`);
-    const text6 = document.createTextNode(`Ничья: ${replaceNone(text[5]) || 'неизвестно'}`);
-    const text7 = document.createTextNode(`Победа 2 команды: ${replaceNone(text[6]) || 'неизвестно'}`);
+    const text1 = document.createTextNode(text[0] || 'неизвестно');
+    const text2 = document.createTextNode(`Команда 1: ${text[1] || 'Неизвестно'}`);
+    const text3 = document.createTextNode(`Команда 2: ${text[2] || 'Неизвестно'}`);
+    const text4 = document.createTextNode(`Текущий счёт: ${text[3] || 'Неизвестно'}`);
+    const text5 = document.createTextNode(`Победа 1 команды: ${text[4] || 'Неизвестно'}`);
+    const text6 = document.createTextNode(`Ничья: ${text[5] || 'Неизвестно'}`);
+    const text7 = document.createTextNode(`Победа 2 команды: ${text[6] || 'Неизвестно'}`);
 
     block.appendChild(text1);
     block.appendChild(document.createElement('br')); // Добавляем перевод строки
@@ -183,11 +183,6 @@ words.forEach(word => {
 
     document.body.appendChild(block);
 });
-
-// Функция для замены null, undefined или 'None' на "неизвестно"
-function replaceNone(value) {
-    return value === null || value === undefined || value === 'None' ? 'неизвестно' : value;
-}
 </script>
 </body>
 
