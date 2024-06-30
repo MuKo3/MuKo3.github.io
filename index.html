@@ -12,7 +12,7 @@
 <div id="match-container">
     <!-- Существующие блоки матчей здесь -->
     <div class="match-block">
-        </div>
+    </div>
 </div>
 </body>
 <script>
@@ -23,6 +23,9 @@
     let value = params.get('games'); // 'key' – это имя целевого параметра
     console.log(value.split('*'))
     arr = value.split('*')
+    console.log(arr)
+    console.log(arr.length)
+    console.log(arr[0][1])
     window.addEventListener('scroll', function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             const matchContainer = document.getElementById('match-container');
@@ -30,6 +33,7 @@
 
             for (let i = 0; i < arr.length; i++) {
                 text = arr[i].split('/')
+
                 const newMatchBlock = document.createElement('div');
                 newMatchBlock.classList.add('match-block');
 
