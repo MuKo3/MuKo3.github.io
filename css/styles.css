@@ -14,7 +14,7 @@
         }
         #wordList {
             list-style: none;
-            padding: 20px;
+            padding: 0;
         }
 
         .block {
