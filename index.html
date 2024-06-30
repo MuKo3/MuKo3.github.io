@@ -159,7 +159,7 @@ words.forEach(word => {
     block.classList.add('block');
 
     // Добавляем семь текстовых узлов в каждый блок
-    const text1 = document.createTextNode(text[0] || 'неизвестно');
+    const text1 = document.createTextNode(`Время начала матча :${text[0] || 'неизвестно'}`);
     const text2 = document.createTextNode(`Команда 1: ${text[1] || 'Неизвестно'}`);
     const text3 = document.createTextNode(`Команда 2: ${text[2] || 'Неизвестно'}`);
     const text4 = document.createTextNode(`Текущий счёт: ${text[3] || 'Неизвестно'}`);
