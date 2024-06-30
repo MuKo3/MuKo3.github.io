@@ -168,22 +168,27 @@
 <ul id="wordList"></ul>
 
 <script>
-    const words = ['яблоко', 'груша', 'банан', 'виноград', 'слива'];
+    let params = new URLSearchParams(document.location.search);
+    let value = params.get('games'); // 'key' – это имя целевого параметра-->
+
+    words = value.split('*')
     const wordList = document.getElementById('wordList');
 
     words.forEach(word => {
-        const listItem = document.createElement('li');
 
+        text = word.split('/')
 
         const block = document.createElement('div');
         block.classList.add('block');
 
         // Добавляем четыре дополнительных текста в каждый блок
-        const text1 = document.createTextNode(word);
-        const text2 = document.createTextNode(`Цена: ${word}`);
-        const text3 = document.createTextNode(`В наличии: ${word}`);
-        const text4 = document.createTextNode(`Описание: ${word}`);
-
+        const text1 = document.createTextNode(text[0]);
+        const text2 = document.createTextNode(`команда 1: ${text[1]}`);
+        const text3 = document.createTextNode(`В наличии: ${text[2]}`);
+        const text4 = document.createTextNode(`Описание: ${text[3]}`);
+        const text5 = document.createTextNode(`команда 1: ${text[4]}`);
+        const text6 = document.createTextNode(`В наличии: ${text[5]}`);
+        const text7 = document.createTextNode(`Описание: ${text[6]}`);
         block.appendChild(text1);
         block.appendChild(document.createElement('br')); // Добавляем перевод строки
         block.appendChild(text2);
@@ -191,6 +196,13 @@
         block.appendChild(text3);
         block.appendChild(document.createElement('br'));
         block.appendChild(text4);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text5);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text6);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text7);
+
 
         document.body.appendChild(block);
     });
