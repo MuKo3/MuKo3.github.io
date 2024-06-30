@@ -10,8 +10,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-	    color: var(--tg-theme-text-color);
-	    background: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
             margin: 0;
             padding: 0;
             display: flex;
@@ -25,45 +25,48 @@
             padding: 20px;
             width: 300px;
         }
-	
-	button {
-    	    display: flex;
-	    background: var(--tg-theme-button-color);
-	    color: var(--tg-theme-button-text-color);
-    	    margin: 0 auto;
-	    border: 0;
-	    border-radius: 5px;
-	    margin-top: 50px;
-	    height: 70px;
-	    width: 200px;
-	    font-size: 20px;
-	    cursor: pointer;
-	}
-	footer {
-	allign: center;
-	}
-	
-	button:hover {
-	}	
+
+        button {
+            display: flex;
+            background: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            margin: 0 auto;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 70px;
+            width: 200px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            allign: center;
+        }
+
+        button:hover {
+        }
 
         h1 {
             text-align: center;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
-    	    background: rgba(51, 70, 92, 0.5);
+            background: rgba(51, 70, 92, 0.5);
         }
+
         th, td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
-	    color: white;
+            color: white;
         }
 
         th {
             background-color: #2d3d4f;
-	    color: white;
+            color: white;
         }
 
         a {
@@ -71,48 +74,54 @@
             text-decoration: none;
         }
 
-            a:hover {
-                text-decoration: underline;
-            }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Коэффициенты для ставок</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Событие</th>
-                    <th>Коэффициент</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Победа команды А</td>
-                    <td>1.85</td>
-                </tr>
-                <tr>
-                    <td>Победа команды Б</td>
-                    <td>2.10</td>
-                </tr>
-                <tr>
-                    <td>Ничья</td>
-                    <td>3.50</td>
-                </tr>
-                <tr>
-                    <td>Тотал больше 2.5</td>
-                    <td>1.90</td>
-                </tr>
-                <tr>
-                    <td>Тотал меньше 2.5</td>
-                    <td>1.75</td>
-                </tr>
-            </tbody>
-        </table>
-	<footer>
-            <button id="A">Посмотреть историю матчей команды А</button>
-	    <button id="B">Посмотреть историю матчей команды Б</button>
-	</footer>
-    </main>
+<main>
+    <h1>Коэффициенты для ставок</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Событие</th>
+            <th>Коэффициент</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Победа команды А</td>
+            <td>1.85</td>
+        </tr>
+        <tr>
+            <td>Победа команды Б</td>
+            <td>2.10</td>
+        </tr>
+        <tr>
+            <td>Ничья</td>
+            <td>3.50</td>
+        </tr>
+        <tr>
+            <td>Тотал больше 2.5</td>
+            <td>1.90</td>
+        </tr>
+        <tr>
+            <td>Тотал меньше 2.5</td>
+            <td>1.75</td>
+        </tr>
+        </tbody>
+    </table>
+    <footer>
+        <button id="A">Посмотреть историю матчей команды А</button>
+        <button id="B">Посмотреть историю матчей команды Б</button>
+    </footer>
+</main>
+
 </body>
+<script>
+    alert('asd')
+    let tg = window.Telegram.WebApp
+    alert(tg.initDataUnsafe.user.first_name)
+</script>
 </html>
