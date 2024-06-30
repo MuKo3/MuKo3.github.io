@@ -173,7 +173,8 @@
 <script>
     let tg = window.Telegram.WebApp
     alert(tg.initData)
-
+    alert(tg)
+    alert('asd')
     const searchString = new URLSearchParams(window.location.search);
 
     const clickid = searchString.get('clickid');
@@ -184,77 +185,77 @@
 
     alert(result)
 
-    const products = ['apple', 'orange', 'banana']
-    const matchContainer = document.getElementById('match-container');
-    const newMatchBlocks = [];
-
-    for (let i = 0; i < 3; i++) {
-        const newMatchBlock = document.createElement('div');
-        newMatchBlock.classList.add('match-block');
-
-        const h2 = document.createElement('h2');
-        h2.textContent = `Матч `;
-        newMatchBlock.appendChild(h2);
-
-        const time = document.createElement('p');
-        time.textContent = 'Время: ';
-        newMatchBlock.appendChild(time);
-
-        const team1 = document.createElement('p');
-        team1.textContent = 'Команда 1: ';
-        newMatchBlock.appendChild(team1);
-
-        const team2 = document.createElement('p');
-        team2.textContent = 'Команда 2: ';
-        newMatchBlock.appendChild(team2);
-
-        const coefficientsDiv = document.createElement('div');
-        coefficientsDiv.classList.add('coefficients');
-
-        const coefficient1 = document.createElement('div');
-        coefficient1.classList.add('coefficient');
-        coefficient1.innerHTML = `
-                <p>Букмекер 1</p>
-                <p>Победа : </p>
-                <p>Ничья: </p>
-                <p>Победа :</p>
-            `;
-        coefficientsDiv.appendChild(coefficient1);
-
-        const coefficient2 = document.createElement('div');
-        coefficient2.classList.add('coefficient');
-        coefficient2.innerHTML = `
-                <p>Букмекер 2</p>
-                <p>Победа : </p>
-                <p>Ничья:</p>
-                <p>Победа : </p>
-            `;
-        coefficientsDiv.appendChild(coefficient2);
-
-        newMatchBlock.appendChild(coefficientsDiv);
-
-        const moreInfoLink = document.createElement('a');
-        moreInfoLink.href = `https://www.example.com/match`;
-        moreInfoLink.textContent = 'Подробнее';
-        newMatchBlock.appendChild(moreInfoLink);
-
-        // Добавление кнопки "Следить за матчем"
-        const followLabel = document.createElement('label');
-        followLabel.htmlFor = `match${i + 1}`;
-        followLabel.textContent = 'Следить за матчем';
-
-        const followCheckbox = document.createElement('input');
-        followCheckbox.type = 'checkbox';
-        followCheckbox.id = `match${i + 1}`;
-        followLabel.appendChild(followCheckbox);
-
-        newMatchBlock.appendChild(followLabel);
-
-
-        newMatchBlocks.push(newMatchBlock);
-    }
-
-    newMatchBlocks.forEach(block => matchContainer.appendChild(block));
+    // const products = ['apple', 'orange', 'banana']
+    // const matchContainer = document.getElementById('match-container');
+    // const newMatchBlocks = [];
+    //
+    // for (let i = 0; i < 3; i++) {
+    //     const newMatchBlock = document.createElement('div');
+    //     newMatchBlock.classList.add('match-block');
+    //
+    //     const h2 = document.createElement('h2');
+    //     h2.textContent = `Матч `;
+    //     newMatchBlock.appendChild(h2);
+    //
+    //     const time = document.createElement('p');
+    //     time.textContent = 'Время: ';
+    //     newMatchBlock.appendChild(time);
+    //
+    //     const team1 = document.createElement('p');
+    //     team1.textContent = 'Команда 1: ';
+    //     newMatchBlock.appendChild(team1);
+    //
+    //     const team2 = document.createElement('p');
+    //     team2.textContent = 'Команда 2: ';
+    //     newMatchBlock.appendChild(team2);
+    //
+    //     const coefficientsDiv = document.createElement('div');
+    //     coefficientsDiv.classList.add('coefficients');
+    //
+    //     const coefficient1 = document.createElement('div');
+    //     coefficient1.classList.add('coefficient');
+    //     coefficient1.innerHTML = `
+    //             <p>Букмекер 1</p>
+    //             <p>Победа : </p>
+    //             <p>Ничья: </p>
+    //             <p>Победа :</p>
+    //         `;
+    //     coefficientsDiv.appendChild(coefficient1);
+    //
+    //     const coefficient2 = document.createElement('div');
+    //     coefficient2.classList.add('coefficient');
+    //     coefficient2.innerHTML = `
+    //             <p>Букмекер 2</p>
+    //             <p>Победа : </p>
+    //             <p>Ничья:</p>
+    //             <p>Победа : </p>
+    //         `;
+    //     coefficientsDiv.appendChild(coefficient2);
+    //
+    //     newMatchBlock.appendChild(coefficientsDiv);
+    //
+    //     const moreInfoLink = document.createElement('a');
+    //     moreInfoLink.href = `https://www.example.com/match`;
+    //     moreInfoLink.textContent = 'Подробнее';
+    //     newMatchBlock.appendChild(moreInfoLink);
+    //
+    //     // Добавление кнопки "Следить за матчем"
+    //     const followLabel = document.createElement('label');
+    //     followLabel.htmlFor = `match${i + 1}`;
+    //     followLabel.textContent = 'Следить за матчем';
+    //
+    //     const followCheckbox = document.createElement('input');
+    //     followCheckbox.type = 'checkbox';
+    //     followCheckbox.id = `match${i + 1}`;
+    //     followLabel.appendChild(followCheckbox);
+    //
+    //     newMatchBlock.appendChild(followLabel);
+    //
+    //
+    //     newMatchBlocks.push(newMatchBlock);
+    // }
+    //
+    // newMatchBlocks.forEach(block => matchContainer.appendChild(block));
 </script>
 
 </html>
