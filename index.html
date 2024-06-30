@@ -113,8 +113,11 @@
     let tg = window.Telegram.WebApp
 
 
-    let params = (new URL(document.location)).searchParams;
-    console.log(params.get("data"));
+    const param = new URLSearchParams(window.location.search).get(
+        "data"
+    );
+    alert(param)
+    console.log(param);
 
     window.addEventListener('scroll', function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
