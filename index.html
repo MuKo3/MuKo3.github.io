@@ -183,6 +183,9 @@ words.forEach(word => {
 
     document.body.appendChild(block);
 });
+    function replaceNone(value) {
+    return value === null || value === undefined || value === 'None' ? 'Неизвестно' : value;
+}
 </script>
 </body>
 
