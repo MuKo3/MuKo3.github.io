@@ -4,13 +4,29 @@
             margin: 0;
             padding: 0;
         }
+
+        #wordList {
+            list-style: none;
+            padding: 0;
+        }
+
         .block {
-            background: var(--tg-theme-bg-color);
-            border: 3px solid #ccc;
-            border-radius: 15px 15px 15px 15px;
-            margin: 20px auto;
+            background-color: white;
             padding: 20px;
-            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .block text {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .block text:last-child {
+            margin-bottom: 0;
+        }
         }
         div {
             background: var(--tg-theme-bg-color);
@@ -29,68 +45,4 @@
         p {
             margin: 0 0 10px;
         }
-        a {
-            display: block;
-            text-align: center;
-            background: var(--tg-theme-button-color);
-            color: var(--tg-theme-button-text-color);
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
-        }
 
-        .probs {
-            display: flex;
-            justify-content: space-around;
-            margin: 10px 0; 
-        }
-        .prob {
-            text-align: center;
-        }
-        .prob-value {
-            font-weight: bold;
-        }
-        .coefficients {
-            display: flex;
-            justify-content: space-around;
-            margin: 10px 0;
-        }
-        .coefficient {
-            text-align: center;
-        }
-        .coefficient-value {
-            font-weight: bold;
-        }
-        label {
-            display: block;
-            text-align: center;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            width: 40px;
-            height: 20px;
-            background-color: #ddd;
-            border-radius: 10px;
-            position: relative;
-            transition: background-color 0.3s;
-        }
-        input[type="checkbox"]:checked {
-            background-color: #4CAF50;
-        }
-        input[type="checkbox"]:checked::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            border-radius: 50%;
-            left: 0;
-            transition: left 0.3s;
-        }
-        input[type="checkbox"]:checked::before {
-            left: 20px;
-        }
