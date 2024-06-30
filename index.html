@@ -113,14 +113,9 @@
     let tg = window.Telegram.WebApp
 
 
-    const param = new URLSearchParams(window.location.search).get(
-        "games"
-    );
-    alert(param)
-    console.log(param);
     let params = new URLSearchParams(document.location.search);
     let value = params.get('games'); // 'key' – это имя целевого параметра
-    console.log(value);
+    console.log(value)
     window.addEventListener('scroll', function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             const matchContainer = document.getElementById('match-container');
