@@ -146,43 +146,44 @@
 <ul id="wordList"></ul>
 
 <script>
-let params = new URLSearchParams(document.location.search);
-let value = params.get('games'); // 'key' – это имя целевого параметра
+    let params = new URLSearchParams(document.location.search);
+    let value = params.get('games'); // 'key' – это имя целевого параметра-->
 
-let words = value ? value.split('*') : ['неизвестно'];
-const wordList = document.getElementById('wordList');
-console.log(words)
-words.forEach(word => {
-    let text = word ? word.split('/') : ['неизвестно'];
+    words = value.split('*')
+    const wordList = document.getElementById('wordList');
+    console.log(words)
+    words.forEach(word => {
 
-    const block = document.createElement('div');
-    block.classList.add('block');
+        text = word.split('/')
+        console.log(text)
+        const block = document.createElement('div');
+        block.classList.add('block');
 
-    // Добавляем четыре дополнительных текста в каждый блок
-    const text1 = document.createTextNode(text[0] || 'неизвестно');
-    const text2 = document.createTextNode(`Команда 1: ${text[1] || 'неизвестно'}`);
-    const text3 = document.createTextNode(`Команда 2: ${text[2] || 'неизвестно'}`);
-    const text4 = document.createTextNode(`Текуший счёт: ${text[3] || 'неизвестно'}`);
-    const text5 = document.createTextNode(`Победа 1 команды: ${text[4] || 'неизвестно'}`);
-    const text6 = document.createTextNode(`Ничья: ${text[5] || 'неизвестно'}`);
-    const text7 = document.createTextNode(`Победа 2 команды: ${text[6] || 'неизвестно'}`);
+        // Добавляем четыре дополнительных текста в каждый блок
+        const text1 = document.createTextNode(text[0]);
+        const text2 = document.createTextNode(`Команда 1: ${text[1]}`);
+        const text3 = document.createTextNode(`Команда 2: ${text[2]}`);
+        const text4 = document.createTextNode(`Текуший счёт: ${text[3]}`);
+        const text5 = document.createTextNode(`Победа 1 команды: ${text[4]}`);
+        const text6 = document.createTextNode(`Ничья: ${text[5]}`);
+        const text7 = document.createTextNode(`Победа 2 команды: ${text[6]}`);
+        block.appendChild(text1);
+        block.appendChild(document.createElement('br')); // Добавляем перевод строки
+        block.appendChild(text2);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text3);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text4);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text5);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text6);
+        block.appendChild(document.createElement('br'));
+        block.appendChild(text7);
 
-    block.appendChild(text1);
-    block.appendChild(document.createElement('br')); // Добавляем перевод строки
-    blockMzMz.appendChild(text2);
-    block.appendChild(document.createElement('br'));
-    block.appendChild(text3);
-    block.appendChild(document.createElement('br'));
-    block.appendChild(text4);
-    block.appendChild(document.createElement('br'));
-    block.appendChild(text5);
-    block.appendChild(document.createElement('br'));
-    block.appendChild(text6);
-    block.appendChild(document.createElement('br'));
-    block.appendChild(text7);
 
-    document.body.appendChild(block);
-});
+        document.body.appendChild(block);
+    });
 </script>
 </body>
 
